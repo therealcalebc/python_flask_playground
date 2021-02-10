@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{title}}</title>
+		<style>
+			h1 {
+				margin: 30px auto;
+				text-align: center;
+			}
+			main {
+				{% if num_boxes <= 3 %}
+				max-width: {{360*num_boxes}}px;
+				{% else %}
+				max-width: 1440px;
+				{% endif %}
+				margin: auto;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			div {
+				width: 300px;
+				height: 300px;
+				margin: 30px;
+				background-color: {{color}};
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome!</h1>
+		<main>
+			{% for x in range(0,num_boxes): %}
+				<div></div>
+			{% endfor %}
+		</main>
+	</body>
+</html>
